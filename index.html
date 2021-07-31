@@ -1,0 +1,28 @@
+<!-- Class on events -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  <!--  -->
+    <button class="first_button">Click me first!</button>
+    <button class="second_button" >Click me second!</button>
+    <button class="third_button">Click me third!</button>
+</body>
+<script>
+  // first method adding event listener
+  function handleClick(event) {
+    let targetElement = event.target;
+    let className = targetElement.className;
+    let buttonDescriptor = className.split('_')[0];
+    alert("you clicked the " + buttonDescriptor + " button!");
+  }
+  
+  let buttons = document.getElementsByTagName('button');
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', handleClick);
+  }
+</script>
+</html>
